@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  <main id="content">{{ content | safe }}</main>
+  <footer>
+    <p>Powered by {{ versions.eleventy }}</p>
+  </footer>
+
+</body>
+</html>

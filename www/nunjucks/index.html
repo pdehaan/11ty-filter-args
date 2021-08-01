@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Testing filter arguments in nunjucks@3.2.3</title>
+  </head>
+  <body>
+    <header>
+      <h1>Testing filter arguments in nunjucks@3.2.3</h1>
+    </header>
+    <main id="content">
+      <h2>No arguments</h2>
+      <pre data-no-arguments>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;</pre
+      >
+
+      <h2>One argument</h2>
+      <pre data-one-argument>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;
+two=&#39;OnE&#39;;</pre
+      >
+
+      <h2>Two arguments</h2>
+      <pre data-two-arguments>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;
+two=&#39;oNe&#39;;
+three=&#39;TwO&#39;;</pre
+      >
+
+      <h2>Two arguments, both undefined (parenthesis optional)</h2>
+      <pre data-arguments-empty>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;
+two=undefined;
+three=undefined;</pre
+      >
+
+      <h2>Two arguments, both optional (with defaults)</h2>
+      <pre data-arguments-defaults>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;
+two=&#39;SeVeN&#39;;
+three={ age: &#39;old (default)&#39;, name: &#39;Paul&#39; };</pre
+      >
+
+      <h2>Keyword arguments (Nunjucks only)</h2>
+      <pre data-nunjucks-kwargs>
+value=&#39;The Quick Brown Fox Jumps Over the Lazy Cat&#39;;
+two=&#39;NiNe&#39;;
+three=&#39;(three default)&#39;;
+kwargs={ four: &#39;What?&#39;, five: &#39;Que?&#39;, __keywords: true };</pre
+      >
+    </main>
+    <footer>
+      <p>Powered by @11ty/eleventy@0.12.1</p>
+    </footer>
+  </body>
+</html>

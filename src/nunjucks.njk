@@ -1,0 +1,23 @@
+---
+eleventyComputed:
+  title: "Testing filter arguments in {{ versions.nunjucks }}"
+string: The Quick Brown Fox Jumps Over the Lazy Cat
+---
+
+<h2>No arguments</h2>
+<pre data-no-arguments>{{ string | no_args }}</pre>
+
+<h2>One argument</h2>
+<pre data-one-argument>{{ string | one_arg("OnE") }}</pre>
+
+<h2>Two arguments</h2>
+<pre data-two-arguments>{{ string | two_args("oNe", "TwO" ) }}</pre>
+
+<h2>Two arguments, both undefined (parenthesis optional)</h2>
+<pre data-arguments-empty>{{ string | two_args }}</pre>
+
+<h2>Two arguments, both optional (with defaults)</h2>
+<pre data-arguments-defaults>{{ string | args_with_defaults("SeVeN", {name:"Paul"} ) }}</pre>
+
+<h2>Keyword arguments (Nunjucks only)</h2>
+<pre data-nunjucks-kwargs>{{ string | args_with_kwargs("NiNe", undefined, four="What?", five="Que?") }}</pre>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Testing filter arguments in liquidjs@6.4.3</title>
+  </head>
+  <body>
+    <header>
+      <h1>Testing filter arguments in liquidjs@6.4.3</h1>
+    </header>
+    <main id="content">
+      <h2>No arguments</h2>
+      <pre data-no-arguments>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';</pre
+      >
+
+      <h2>One argument</h2>
+      <pre data-one-argument>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';
+two='OnE';</pre
+      >
+
+      <h2>Two arguments</h2>
+      <pre data-two-arguments>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';
+two='oNe';
+three='TwO';</pre
+      >
+
+      <h2>Two arguments, both undefined</h2>
+      <pre data-arguments-empty>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';
+two=undefined;
+three=undefined;</pre
+      >
+
+      <h2>Two arguments, both optional (with defaults)</h2>
+
+      <pre data-arguments-defaults>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';
+two='SeVeN';
+three={ age: 'old (default)' };</pre
+      >
+
+      <p>
+        Note that passing an object literal as a filter argument isn't supported
+        in liquidjs@6.4.3. In order to pass an object as an argument, we can
+        define it in the frontmatter or use a global data file.
+      </p>
+
+      <pre data-arguments-defaults>
+value='The Quick Brown Fox Jumps Over the Lazy Cat';
+two='SeVeN';
+three={ age: 'old (default)', name: 'Paul (frontmatter)' };</pre
+      >
+    </main>
+    <footer>
+      <p>Powered by @11ty/eleventy@0.12.1</p>
+    </footer>
+  </body>
+</html>

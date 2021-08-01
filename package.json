@@ -1,0 +1,34 @@
+{
+  "name": "11ty-filter-args",
+  "description": "Testing multi-argument filters in Eleventy.",
+  "version": "1.0.0",
+  "author": "Peter deHaan",
+  "bugs": {
+    "url": "https://github.com/pdehaan/11ty-filter-args/issues"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "dedent": "^0.7.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/pdehaan/11ty-filter-args#readme",
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "filters"
+  ],
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/11ty-filter-args.git"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "pretty:src": "npx prettier src --write",
+    "pretty:www": "npx prettier www --write",
+    "serve": "npm run build -- --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

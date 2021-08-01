@@ -1,0 +1,31 @@
+---
+eleventyComputed:
+  title: "Testing filter arguments in {{ versions.liquidjs }}"
+# layout: ""
+
+string: The Quick Brown Fox Jumps Over the Lazy Cat
+obj:
+  name: Paul (frontmatter)
+---
+
+<h2>No arguments</h2>
+<pre data-no-arguments>{{ string | no_args }}</pre>
+
+<h2>One argument</h2>
+<pre data-one-argument>{{ string | one_arg: "OnE" }}</pre>
+
+<h2>Two arguments</h2>
+<pre data-two-arguments>{{ string | two_args: "oNe", "TwO" }}</pre>
+
+<h2>Two arguments, both undefined</h2>
+<pre data-arguments-empty>{{ string | two_args }}</pre>
+
+<h2>Two arguments, both optional (with defaults)</h2>
+{% comment %} Inline object parameter to a filter doesn't work. {% endcomment %}
+<pre data-arguments-defaults>{{ string | args_with_defaults: "SeVeN", {name:"Paul"} }}</pre>
+
+<p>Note that passing an object literal as a filter argument isn't supported in {{ versions.liquidjs }}. In order to pass an object as an argument, we can define it in the frontmatter or use a global data file.</p>
+
+{% comment %} Predefined object parameter from frontmatter to a filter. {% endcomment %}
+<pre data-arguments-defaults>{{ string | args_with_defaults: "SeVeN", obj }}</pre>
+
