@@ -6,5 +6,5 @@ module.exports = {
 
 function libVersion(pkgName) {
   const { name, version } = require(`${pkgName}/package.json`);
-  return `${name}@${version}`;
+  return [name, version].join("@");
 }
